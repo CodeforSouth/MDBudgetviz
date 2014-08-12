@@ -83,13 +83,13 @@
 
           <!-- put 'em here -->
           <div class='row placeholders'>
-            <h3>Operating</h3>
+            <h3>Operating (in millions of dollars)</h3>
             <canvas id="operating_canvas" height="450" width="600"></canvas>
 
-            <h3>Capital</h3>
+            <h3>Capital (in millions of dollars)</h3>
             <canvas id="capital_canvas" height="450" width="600"></canvas>
 
-            <h3>Total</h3>         
+            <h3>Total (in millions of dollars) -- these percentages are NOT correct, though the numbers are</h3>         
             <canvas id="total_canvas" height="450" width="600"></canvas>
           </div>
 
@@ -148,47 +148,26 @@
 
 
 
-      <script src='data.js'></script>
+      <script src='bar-data.js'></script>
       <script>
-        /*var randomScalingFactor = function(){ return Math.round(Math.random()*100)};*/
 
-        var barChartData = {
-          labels : ["Operating","Capital","Operating and Capital"],
-          datasets : [
-            {
-              fillColor : "rgba(220,220,220,0.5)",
-              strokeColor : "rgba(220,220,220,0.8)",
-              highlightFill: "rgba(220,220,220,0.75)",
-              highlightStroke: "rgba(220,220,220,1)",
-              data : [10,2,3,4,5,6,7]
-            },
-            {
-              fillColor : "rgba(151,187,205,0.5)",
-              strokeColor : "rgba(151,187,205,0.8)",
-              highlightFill : "rgba(151,187,205,0.75)",
-              highlightStroke : "rgba(151,187,205,1)",
-              data : [1,2,3,4,5,6,7]
-            }
-          ]
-
-        }
         window.onload = function(){
           
           // load operating costs graph
           var op_ctx = document.getElementById("operating_canvas").getContext("2d");
-          window.myBar = new Chart(op_ctx).Bar(barChartData, {
+          window.myBar = new Chart(op_ctx).Bar(operating_data, {
             responsive : true
           });
 
           // load capital costs graph
           var cap_ctx = document.getElementById("capital_canvas").getContext("2d");
-          window.myBar = new Chart(cap_ctx).Bar(barChartData, {
+          window.myBar = new Chart(cap_ctx).Bar(capital_data, {
             responsive : true
           });
 
           // load total costs graph
           var tot_ctx = document.getElementById("total_canvas").getContext("2d");
-          window.myBar = new Chart(tot_ctx).Bar(barChartData, {
+          window.myBar = new Chart(tot_ctx).Bar(total_data, {
             responsive : true
           });        
         }
