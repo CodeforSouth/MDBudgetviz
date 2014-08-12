@@ -11,7 +11,7 @@ var operatingData = [
       // dollarValue: 0,
       color: "#403874",
       highlight: "#261c4e",
-      label: "Neighborhood and Infrastructure"
+      label: "Neighborh. & Infrastruc."
     },
     {
       value: 7,
@@ -71,7 +71,7 @@ var operatingData = [
       // dollarValue: 0,
       color: "#403874",
       highlight: "#261c4e",
-      label: "Neighborhood and Infrastructure"
+      label: "Neighborh. & Infrastruc."
     },
     {
       value: 3,
@@ -131,7 +131,7 @@ var operatingData = [
       // dollarValue: 0,
       color: "#403874",
       highlight: "#261c4e",
-      label: "Neighborhood and Infrastructure"
+      label: "Neighborh. & Infrastruc."
     },
     {
       value: 6,

@@ -36,6 +36,10 @@
       canvas {
         display: inline-block;
       }
+
+      .row div {
+        margin-bottom: 70px;
+      }
     </style>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -98,19 +102,19 @@
 
           <!-- put 'em here -->
           <div class='row placeholders'>
-            <div id="canvas-holder" class='col-sm-3 col-md-2'>
-              <canvas id="operating-chart" width="500" height="500"></canvas>
+            <div id="canvas-holder" class='col-sm-offset-3 col-md-offset-2'>
               <h4>Operating expenses</h4>
+              <canvas id="operating-chart" width="500" height="500"></canvas>
             </div>
 
-            <div id="canvas-holder2" class='col-sm-3 col-md-2'>
-              <canvas id="capital-chart" width="500" height="500"></canvas>
+            <div id="canvas-holder2" class='col-sm-offset-3 col-md-offset-2'>
               <h4>Capital expenses</h4>
+              <canvas id="capital-chart" width="500" height="500"></canvas>
             </div>
 
-            <div id="canvas-holder3" class='col-sm-3 col-md-2'>
+            <div id="canvas-holder3" class='col-sm-offset-3 col-md-offset-2'>
+              <h4>Capital expenses</h4>
               <canvas id="total-chart" width="500" height="500"></canvas>
-              <h4>Total (Operating and Capital)</h4>
             </div>
           </div>
 

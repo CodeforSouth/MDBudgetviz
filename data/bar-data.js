@@ -10,9 +10,9 @@ var operating_data = {
     "Policy/Administration (1%)"
   ], datasets : [
     {
-      fillColor : "rgba(220,220,220,0.5)",
+      fillColor : "#bfb7e6",
       strokeColor : "rgba(220,220,220,0.8)",
-      highlightFill: "rgba(220,220,220,0.75)",
+      highlightFill: "#7d86c1",
       highlightStroke: "rgba(220,220,220,1)",
       data : 
       [
@@ -41,9 +41,9 @@ var capital_data = {
     "Policy/Admin (0%)"
   ], datasets : [
     {
-      fillColor : "rgba(220,220,220,0.5)",
+      fillColor : "#1f0937",
       strokeColor : "rgba(220,220,220,0.8)",
-      highlightFill: "rgba(220,220,220,0.75)",
+      highlightFill: "#574331",
       highlightStroke: "rgba(220,220,220,1)",
       data : [
         708.49,   // transportation
@@ -72,9 +72,9 @@ var total_data = {
     "Policy/Administration (1%)"
   ], datasets : [
     {
-      fillColor : "rgba(220,220,220,0.5)",
+      fillColor : "#9d9121",
       strokeColor : "rgba(220,220,220,0.8)",
-      highlightFill: "rgba(220,220,220,0.75)",
+      highlightFill: "#a49959",
       highlightStroke: "rgba(220,220,220,1)",
       data : 
       [
