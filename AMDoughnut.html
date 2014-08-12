@@ -2,10 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- cursive font -->
-    <link href='http://fonts.googleapis.com/css?family=Condiment&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,16 +17,35 @@
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 
+
+    <!-- custom style for doughnuts -->
     <style>
-      #signature {
-        font-family: 'Herr Von Muellerhoff', cursive;
+      #canvas-holder{
+        width:30%;
+      }
+      #canvas-holder2{
+        width:30%;
+        position:relative;
+
+      }
+      #canvas-holder3{
+        width:30%;
+        position:relative;
       }
 
-      .main p {
-        font-size: 17px;
+      canvas {
+        display: inline-block;
       }
 
-      .line-break {height:30px;}
+      .row div {
+        margin-bottom: 70px;
+      }
+
+      #chartdiv {
+        width   : 800px;
+        height    : 500px;
+        font-size : 11px;
+      }       
     </style>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -40,6 +55,10 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
 
+    <script type="text/javascript" src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+    <script type="text/javascript" src="http://www.amcharts.com/lib/3/pie.js"></script>
+    <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/light.js"></script>
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -48,6 +67,7 @@
   </head>
 
   <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -71,14 +91,13 @@
       </div>
     </div>
 
-
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="index.html">Overview</a></li>
+            <li><a href="index.html">Overview</a></li>
             <li><a href="doughnuts.html">Spending - Doughnuts</a></li>
-            <li><a href="amdoughnut.html">Spending - AM Doughnuts</a></li>
+            <li class="active"><a href="amdoughnut.html">Spending - AM Doughnuts</a></li>
             <li><a href="bars.html">Spending - Bars</a></li>
             <li><a href="stackedbars.html">Spending - Stacked Bars</a></li>
             <li><a href="divAccordion.html">Division Accordion</a></li>
@@ -90,25 +109,26 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <!-- THE TEXT OF THE PAGE -->
-          <h1 class="page-header">Welcome</h1>
-          
-          <p>Miami's Early Voting for the August 26 Primary Elections starts on August 11th and continues until August 24.</p>
+          <h1 class="page-header">Visual Aids</h1>
 
-          <p>On Wednesday, August 13, Miami-Dade Mayor Carlos Gimenez will host two "Social Media Town Hall Meetings." Each will offer a chance for citizens to ask the mayor any question regarding the proposed budget for the 2014-2015 filscal year. From 12pm - 1pm, Gimenez will be on <a href='https://www.facebook.com/events/761895147208652'>Facebook</a>. From 3pm - 4pm, he will be on <a href='https://twitter.com/MayorGimenez'>Twitter</a>.</p>
+          <!-- put 'em here -->
+          <div class='row placeholders'>
+            <div id="canvas-holder" class='col-md-offset-3 col-md-offset-2'>
+              <div id="chartdiv"></div> 
+              <h4>Operating expenses</h4>
+            </div>
 
-          <p>We aim to use visualizations to make the proposal as easy to understand as possible for the greater Miami-Dade population. We take our numbers from the Miami-Dade Budget <a href='http://www.miamidade.gov/budget/'>website</a>. The data used is accurate up to August 11, 2014.</p>
+            <div id="canvas-holder2" class='col-sm-offset-3 col-md-offset-2'>
+              <h4>Capital expenses</h4>
+            </div>
 
-          <p>All citizens deserve to know where their tax dollars go.</p>
+            <div id="canvas-holder3" class='col-sm-offset-3 col-md-offset-2'>
+              <h4>Capital expenses</h4>
+            </div>
+          </div>
 
-          <div class="line-break"></div>
-          <h1 id='signature'>Code for Miami</h1>
-          <p>- Code for Miami</p>
+
         </div>
-
-
-
-
       </div>
     </div>
 
@@ -118,5 +138,52 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
+    <script src="Chart.js"></script>
+
+
+
+      <script>
+        var chart = AmCharts.makeChart("chartdiv", {
+          "type": "pie",
+          "theme": "light",
+          "dataProvider": [{
+              "title": "Public Safety",
+              "value": 1318090600
+          }, {
+              "title": "Neighborhood and Infrastructure",
+              "value": 999930800
+          }, {
+              "title": "General Government",
+              "value": 13635420
+          }, {
+              "title": "Recreation and Culture",
+              "value": 22725700
+          }, {
+              "title": "Transportation",
+              "value": 1090833600
+          }, {
+              "title": "Health and Human Services",
+              "value": 409062600
+          }, {
+              "title": "Economic Development",
+              "value": 13635420
+          }, {
+              "title": "Policy and Administration",
+              "value": 4545140
+          }],
+          "titleField": "title",
+          "valueField": "value",
+          "labelRadius": 5,
+
+          "radius": "42%",
+          "innerRadius": "60%",
+          "labelText": "[[title]]"
+        });
+
+
+
+
+      </script>
+
   </body>
 </html>
