@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="../favicon.ico">
 
     <title>Miami-Dade Budget Visualization</title>
 
@@ -20,7 +20,22 @@
 
     <!-- custom style for doughnuts -->
     <style>
+      #canvas-holder{
+        width:30%;
+      }
+      #canvas-holder2{
+        width:30%;
+        position:relative;
 
+      }
+      #canvas-holder3{
+        width:30%;
+        position:relative;
+      }
+
+      canvas {
+        display: inline-block;
+      }
     </style>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -67,8 +82,8 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="index.html">Overview</a></li>
-            <li><a href="doughnuts.html">Spending - Doughnuts</a></li>
-            <li class='active'><a href="bars.html">Spending - Bars</a></li>
+            <li class="active"><a href="doughnuts.html">Spending - Doughnuts</a></li>
+            <li><a href="bars.html">Spending - Bars</a></li>
             <li><a href="#">Revenue</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -82,20 +97,26 @@
 
           <!-- put 'em here -->
           <div class='row placeholders'>
-            <h3>Operating (in millions of dollars)</h3>
-            <canvas id="operating_canvas" height="450" width="600"></canvas>
+            <div id="canvas-holder" class='col-sm-3 col-md-2'>
+              <canvas id="operating-chart" width="500" height="500"></canvas>
+              <h4>Operating expenses</h4>
+            </div>
 
-            <h3>Capital (in millions of dollars)</h3>
-            <canvas id="capital_canvas" height="450" width="600"></canvas>
+            <div id="canvas-holder2" class='col-sm-3 col-md-2'>
+              <canvas id="capital-chart" width="500" height="500"></canvas>
+              <h4>Capital expenses</h4>
+            </div>
 
-            <h3>Total (in millions of dollars) -- these percentages are NOT correct, though the numbers are</h3>         
-            <canvas id="total_canvas" height="450" width="600"></canvas>
+            <div id="canvas-holder3" class='col-sm-3 col-md-2'>
+              <canvas id="total-chart" width="500" height="500"></canvas>
+              <h4>Total (Operating and Capital)</h4>
+            </div>
           </div>
 
           
 
 
-          <!-- chart -->
+
           <h2 class="sub-header">Broken Down</h2>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -143,33 +164,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
-    <script src="../Chart.js"></script>
+    <script src="Chart.js"></script>
 
 
 
-      <script src='bar-data.js'></script>
+      <script src='data/doughnut-data.js'></script>
       <script>
-
         window.onload = function(){
-          
-          // load operating costs graph
-          var op_ctx = document.getElementById("operating_canvas").getContext("2d");
-          window.myBar = new Chart(op_ctx).Bar(operating_data, {
-            responsive : true
-          });
-
-          // load capital costs graph
-          var cap_ctx = document.getElementById("capital_canvas").getContext("2d");
-          window.myBar = new Chart(cap_ctx).Bar(capital_data, {
-            responsive : true
-          });
-
-          // load total costs graph
-          var tot_ctx = document.getElementById("total_canvas").getContext("2d");
-          window.myBar = new Chart(tot_ctx).Bar(total_data, {
-            responsive : true
-          });        
-        }
+          var ctx = document.getElementById("operating-chart").getContext("2d");
+          window.myDoughnut = new Chart(ctx).Doughnut(operatingData, {responsive : true});
+          var ctx = document.getElementById("capital-chart").getContext("2d");
+          window.myDoughnut = new Chart(ctx).Doughnut(capitalData, {responsive : true});
+          var ctx = document.getElementById("total-chart").getContext("2d");
+          window.myDoughnut = new Chart(ctx).Doughnut(totalData, {responsive : true});
+        };
       </script>
 
   </body>
