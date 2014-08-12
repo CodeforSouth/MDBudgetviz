@@ -20,7 +20,9 @@
 
     <!-- accordion stylesheet -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
-    <link href='src/style/accordion.css'>
+    <link href='src/style/normalize.css' rel='stylesheet'>
+    <link href='src/style/accordion_style.css' rel='stylesheet'>
+
     <!-- custom style for doughnuts -->
     <style></style>
 
@@ -216,7 +218,8 @@
             activeHeader: "ui-icon-circle-arrow-s"
           };
           $( "#accordion" ).accordion({
-            icons: icons
+            icons: icons,
+            collapsible: true
           });
         });
       </script>
