@@ -1,0 +1,15 @@
+#accordion .ui-state-active {
+	background: #7d86c1;
+}
+
+.ui-accordion-header {
+	background: #7d86c1;
+}
+
+#accordion .ui-state-default {
+	background: #bfb7e6;
+}
+
+.ui-accordion-content {
+	background: #c7c7c7;
+}
