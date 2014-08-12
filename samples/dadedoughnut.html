@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Doughnut Chart</title>
+		<script src="../Chart.js"></script>
+		<style>
+			body{
+				padding: 0;
+				margin: 0;
+			}
+			#canvas-holder{
+				width:30%;
+			}
+			#canvas-holder2{
+				width:30%;
+				position:relative;
+
+			}
+			#canvas-holder3{
+				width:30%;
+				position:relative;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Operating expenses</h1>
+		<div id="canvas-holder">
+			<canvas id="operating-chart" width="500" height="500"/>
+		</div>
+		<p></p>
+		<h1>Capital expenses</h1>
+		<div id="canvas-holder2">
+			<canvas id="capital-chart" width="500" height="500"/>
+		</div>
+		<h1>Total (Operating + Capital)</h1>
+		<div id="canvas-holder3">
+			<canvas id="total-chart" width="500" height="500"/>
+		</div>
+
+
+	<script>
+
+		var operatingData = [
+				{
+					value: 29,
+					color:"#F7464A",
+					highlight: "#FF5A5E",
+					label: "Public Safety"
+				},
+				{
+					value: 22,
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "Neighborhood and Infrastructure"
+				},
+				{
+					value: 7,
+					color: "#FDB45C",
+					highlight: "#FFC870",
+					label: "General Government"
+				},
+				{
+					value: 5,
+					color: "#949FB1",
+					highlight: "#A8B3C5",
+					label: "Recreation and Culture"
+				},
+				{
+					value: 24,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Transportation"
+				},
+				{
+					value: 9,
+					color: "#666",
+					highlight: "#616774",
+					label: "Health and Human Services"
+				},
+				{
+					value: 3,
+					color: "#c7c7c7",
+					highlight: "#616774",
+					label: "Economic Development"
+				},
+				{
+					value: 1,
+					color: "#d7d7d7",
+					highlight: "#616774",
+					label: "Policy and Administration"
+				}
+
+
+			];
+			var capitalData = [
+				{
+					value: 6,
+					color:"#F7464A",
+					highlight: "#FF5A5E",
+					label: "Public Safety"
+				},
+				{
+					value: 26,
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "Neighborhood and Infrastructure"
+				},
+				{
+					value: 3,
+					color: "#FDB45C",
+					highlight: "#FFC870",
+					label: "General Government"
+				},
+				{
+					value: 10,
+					color: "#949FB1",
+					highlight: "#A8B3C5",
+					label: "Recreation and Culture"
+				},
+				{
+					value: 43,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Transportation"
+				},
+				{
+					value: 11,
+					color: "#666",
+					highlight: "#616774",
+					label: "Health and Human Services"
+				},
+				{
+					value: 1,
+					color: "#c7c7c7",
+					highlight: "#616774",
+					label: "Economic Development"
+				},
+				{
+					value: 0,
+					color: "#d7d7d7",
+					highlight: "#616774",
+					label: "Policy and Administration"
+				}
+
+
+			];
+			var totalData = [
+				{
+					value: 23,
+					color:"#F7464A",
+					highlight: "#FF5A5E",
+					label: "Public Safety"
+				},
+				{
+					value: 23,
+					color: "#46BFBD",
+					highlight: "#5AD3D1",
+					label: "Neighborhood and Infrastructure"
+				},
+				{
+					value: 6,
+					color: "#FDB45C",
+					highlight: "#FFC870",
+					label: "General Government"
+				},
+				{
+					value: 6,
+					color: "#949FB1",
+					highlight: "#A8B3C5",
+					label: "Recreation and Culture"
+				},
+				{
+					value: 29,
+					color: "#4D5360",
+					highlight: "#616774",
+					label: "Transportation"
+				},
+				{
+					value: 10,
+					color: "#666",
+					highlight: "#616774",
+					label: "Health and Human Services"
+				},
+				{
+					value: 3,
+					color: "#c7c7c7",
+					highlight: "#616774",
+					label: "Economic Development"
+				},
+				{
+					value: 1,
+					color: "#d7d7d7",
+					highlight: "#616774",
+					label: "Policy and Administration"
+				}
+
+
+			];
+
+			window.onload = function(){
+				var ctx = document.getElementById("operating-chart").getContext("2d");
+				window.myDoughnut = new Chart(ctx).Doughnut(operatingData, {responsive : true});
+				var ctx = document.getElementById("capital-chart").getContext("2d");
+				window.myDoughnut = new Chart(ctx).Doughnut(capitalData, {responsive : true});
+				var ctx = document.getElementById("total-chart").getContext("2d");
+				window.myDoughnut = new Chart(ctx).Doughnut(totalData, {responsive : true});
+			};
+
+
+
+	</script>
+	</body>
+</html>
