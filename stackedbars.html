@@ -17,6 +17,26 @@
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 
+    <style>
+      .legend div {
+        height:20px;
+        width:20px;
+        position:absolute;
+      }
+
+      .legend p {
+        margin-left:30px;
+      }
+
+      #op_box {
+        background-color: #bfb7e6;
+      }
+
+      #cap_box {
+        background-color: #FFC870;
+      }
+    </style>
+
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
@@ -80,6 +100,19 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Visual Aids</h1>
           <h4>(in millions of dollars)</h4>
+
+          <!-- legend -->
+          <div class='legend_wrapper'>
+            <div id='operating' class='legend'>
+              <div id='op_box'></div>
+              <p>Operating Expenses</p>
+            </div>
+
+            <div id='capital' class='legend'>
+              <div id='cap_box'></div>
+              <p>Capital Expenses</p>
+            </div>
+          </div>
 
           <!-- put 'em here -->
           <div class='row placeholders'>
