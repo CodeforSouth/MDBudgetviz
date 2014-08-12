@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Bootstrapped Dade Doughnuts</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+
+
+    <!-- custom style for doughnuts -->
+    <style>
+
+    </style>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bootstrapped Doughnuts</a>
+        </div>
+        
+        
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Sources</a></li>
+            <li><a href="#">More Info</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="doughnuts.html">Spending - Doughnuts</a></li>
+            <li class='active'><a href="bars.html">Spending - Bars</a></li>
+            <li><a href="#">Revenue</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">All</a></li>
+            <li><a href="">Operating Expenses Only</a></li>
+            <li><a href="">Capital Expenses Only</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Visual Aids</h1>
+
+          <!-- put 'em here -->
+          <div class='row placeholders'>
+            <h3>Operating</h3>
+            <canvas id="operating_canvas" height="450" width="600"></canvas>
+
+            <h3>Capital</h3>
+            <canvas id="capital_canvas" height="450" width="600"></canvas>
+
+            <h3>Total</h3>         
+            <canvas id="total_canvas" height="450" width="600"></canvas>
+          </div>
+
+          
+
+
+          <!-- chart -->
+          <h2 class="sub-header">Broken Down</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+                <tr>
+                  <td>1,003</td>
+                  <td>Integer</td>
+                  <td>nec</td>
+                  <td>odio</td>
+                  <td>Praesent</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
+    <script src="../Chart.js"></script>
+
+
+
+      <script src='data.js'></script>
+      <script>
+        /*var randomScalingFactor = function(){ return Math.round(Math.random()*100)};*/
+
+        var barChartData = {
+          labels : ["Operating","Capital","Operating and Capital"],
+          datasets : [
+            {
+              fillColor : "rgba(220,220,220,0.5)",
+              strokeColor : "rgba(220,220,220,0.8)",
+              highlightFill: "rgba(220,220,220,0.75)",
+              highlightStroke: "rgba(220,220,220,1)",
+              data : [10,2,3,4,5,6,7]
+            },
+            {
+              fillColor : "rgba(151,187,205,0.5)",
+              strokeColor : "rgba(151,187,205,0.8)",
+              highlightFill : "rgba(151,187,205,0.75)",
+              highlightStroke : "rgba(151,187,205,1)",
+              data : [1,2,3,4,5,6,7]
+            }
+          ]
+
+        }
+        window.onload = function(){
+          
+          // load operating costs graph
+          var op_ctx = document.getElementById("operating_canvas").getContext("2d");
+          window.myBar = new Chart(op_ctx).Bar(barChartData, {
+            responsive : true
+          });
+
+          // load capital costs graph
+          var cap_ctx = document.getElementById("capital_canvas").getContext("2d");
+          window.myBar = new Chart(cap_ctx).Bar(barChartData, {
+            responsive : true
+          });
+
+          // load total costs graph
+          var tot_ctx = document.getElementById("total_canvas").getContext("2d");
+          window.myBar = new Chart(tot_ctx).Bar(barChartData, {
+            responsive : true
+          });        
+        }
+      </script>
+
+  </body>
+</html>
