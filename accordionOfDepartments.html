@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../favicon.ico">
+
+    <title>Miami-Dade Budget Visualization</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
+
+
+    <!-- accordion stylesheet -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+
+    <!-- custom style for doughnuts -->
+    <style></style>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Miami-Dade Budget Visualizations</a>
+        </div>
+        
+        
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">About</a></li>
+            <li><a href="http://www.miamidade.gov/budget/">Learn more</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="doughnuts.html">Spending - Doughnuts</a></li>
+            <li class='active'><a href="bars.html">Spending - Bars</a></li>
+            <li><a href="stackedbars.html">Spending - Stacked Bars</a></li>
+            <li><a href="#">Revenue</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">All</a></li>
+            <li><a href="">Operating Expenses Only</a></li>
+            <li><a href="">Capital Expenses Only</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Data Accordion</h1>
+
+          <!-- accordion here -->
+          <!-- don't forget accordion stylesheet
+            <link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">-->
+
+          <div id="accordion">
+          <h3>Public Safety</h3>
+          <div>
+            <ul>
+              <li>Funding for the County Court system</li>
+              <li>Emergency response times under 7 minutes for Fire-Rescue and 8 minutes for Police</li>
+              <li>Medical Examiner investigates 14,000 cases annually</li>
+              <li>105,000 emergency shelter spaces available</li>
+              <li>Specialized response capabilities for every type of Fire Rescue emergency, including Air Rescue, Technical Rescue, Urban Search and Rescue, Anti-Venom, and Hazardous Materials</li>
+              <li>Specialized units for every type of Police emergency, including Aviation and Marine Patrol, Motors Unit, Canine Unit, Bomb Disposal Unit, Special Response Team, and targeted crime units, such as, Narcotics, Robbery, Gangs, and Organized Crime</li>
+              <li>Care and custody of over 4,700 inmates daily</li>
+              <li>Referral of more than 3,200 juveniles to diversion and prevention programs</li>
+            </ul>
+          </div>
+
+
+
+          <h3>Neighborhood and Infrastructure</h3>
+          <div>
+            <ul>
+              <li>9,300 animals adopted from the animal shelter each year </li>
+              <li>Maintenance of causeways, bridges, roads, traffic signals, canals and storm drains</li>
+              <li>Curbside pickup of garbage, recycling, and bulky waste</li>
+              <li>Perform inspection and permitting functions, as well as certification of new construction industry products</li>
+              <li>Enforce Miami-Dade County’s Code</li>
+              <li>Monitor air quality and surface and ground water contamination levels</li>
+              <li>Preserve environmentally endangered lands as well as enforcement action concerning uplands and wetlands violations</li>
+              <li>Proactively maintain right-of-ways, sidewalks, and street signs</li> 
+            </ul>
+          </div>
+
+
+
+
+
+          <h3>Recreation and Culture</h3>
+          <div>
+            <ul>
+              <li>260 parks, including golf courses, marinas, beaches, and sports fields</li>
+              <li>World class attractions like ZooMiami, and Deering Estate visited by more than 994,000 visitors a year</li>
+              <li>Renowned cultural facilities such as Miami Art Museum, HistoryMiami, Vizcaya Museum and Gardens, Fairchild Tropical Botanical Gardens, Miami Science Museum, Adrienne Arsht Center for the Performing Arts, and Miami Children’s Museum</li>
+              <li>Grants to 550 community culture groups that offer dance, theater, music , art and festivals generating an annual economic impact of almost $1.1 billion</li>
+              <li>48 Library branch locations and two bookmobiles, serving more than six million visitors each year, access to a collection of more than 1.6 million books and materials, 1,735 public computers, Wi-Fi at every location, and a wide range of digital resources, including downloadable e-books, audio books, music and video</li>
+            </ul>
+          </div>
+
+
+
+          <h3>General Government</h3>
+          <div>
+            <ul>
+              <li>Reliable and convenient elections for more than one million voters</li>
+              <li>Answer to more than 1.6 million calls a year and provide access to information and services through the 311 Answer Center</li>
+              <li>Broadcast on Miami-Dade TV and Miami-Dade TV On Demand, original informational and public service programming </li>
+              <li>Provide customer and employee portal self-services and on-line internal communication tools</li>
+              <li>Manage the County’s strategic planning process and reorganizational analysis </li>
+              <li>Manage a $3.2 billion financial portfolio</li> 
+              <li>Promote fairness and equal opportunity in employment, housing, public accommodations, credit and financing practices, family leave and domestic violence leave</li>
+              <li>Promote a transparent government investigating and preventing fraud, waste, mismanagement, and abuse of power in county projects, programs or contracts</li>
+            </ul>
+          </div>
+
+
+
+          <h3>Transportation</h3>
+          <div>
+            <ul>
+              <li>29.2 million miles of Metrobus and 4.4 miles of Metromover and 25 miles Metrorail</li>
+              <li>Miami International Airport services 95 airlines that see 41.9 million passengers and 2. 2 million tons of cargo annually</li>
+              <li>Port of Miami, the busiest cruise port in the world, serves 4.8 million passengers and 8 million tons of cargo</li>
+            </ul>
+          </div>
+
+
+
+          <h3>Economic Development</h3>
+          <div>
+            <ul>
+              <li>Promoting Miami-Dade County as a global gateway and enhancing access to the economic development opportunities</li>
+              <li>Helping small and local businesses thrive with mentorship programs and other opportunities</li>
+              <li>Provide assistance to 335 homeowners for down payment and closing costs</li>
+              <li>More than 9,000 units of public housing and rent vouchers for 17,000 low-income families</li>
+            </ul>
+          </div>
+
+          <h3>Health and Human Services</h3>
+          <div>
+            <ul>
+              <li>More than 764,000 meals served to the elderly</li>
+              <li>180 at-risk youth are served by Foster Grandparents</li>
+              <li>Provide assistance with filing benefit claims to 900 Veterans </li>
+              <li>More than 1,400 victims of domestic violence are provided with shelter and advocacy services</li>
+              <li>Head Start and Early Headstart child care for more than 7,200 needy children under 6 years old</li>
+              <li>Provide funding to Public Health Trust facilities</li>
+              <li>Funds over 200 community-based organization dedicated to provide services to the most needed in the community </li>
+              <li>Creates and retains 109 jobs for low-to-moderate income individuals</li>
+            </ul>
+          </div>
+
+          <h3>Policy/Administration</h3>
+          <div>
+            <ul>
+              <li>Office of the Mayor, Board of County Commissioners, and the County Attorney’s Office </li>
+            </ul>
+          </div>
+
+
+
+        </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
+
+      <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
+    <script>
+        $(function() {
+          var icons = {
+            header: "ui-icon-circle-arrow-e",
+            activeHeader: "ui-icon-circle-arrow-s"
+          };
+          $( "#accordion" ).accordion({
+            icons: icons
+          });
+        });
+      </script>
+  </body>
+</html>
