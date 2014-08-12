@@ -2,36 +2,36 @@ var operatingData = [
     {
       value: 29,
       // dollarValue: 0,
-      color:"#F7464A",
-      highlight: "#FF5A5E",
+      color:"#bfb7e6",
+      highlight: "#7d86c1",
       label: "Public Safety"
     },
     {
       value: 22,
       // dollarValue: 0,
-      color: "#46BFBD",
-      highlight: "#5AD3D1",
+      color: "#403874",
+      highlight: "#261c4e",
       label: "Neighborhood and Infrastructure"
     },
     {
       value: 7,
       // dollarValue: 0,
-      color: "#FDB45C",
-      highlight: "#FFC870",
+      color: "#1f0937",
+      highlight: "#574331",
       label: "General Government"
     },
     {
       value: 5,
       // dollarValue: 0,
-      color: "#949FB1",
-      highlight: "#A8B3C5",
+      color: "#9d9121",
+      highlight: "#a49959",
       label: "Recreation and Culture"
     },
     {
       value: 24,
       // dollarValue: 0,
-      color: "#4D5360",
-      highlight: "#616774",
+      color: "#b6b37e",
+      highlight: "#91a3f5",
       label: "Transportation"
     },
     {
@@ -51,8 +51,8 @@ var operatingData = [
     {
       value: 1,
       // dollarValue: 0,
-      color: "#d7d7d7",
-      highlight: "#616774",
+      color: "#FDB45C",
+      highlight: "#FFC870",
       label: "Policy and Administration"
     }
 
@@ -62,36 +62,36 @@ var operatingData = [
     {
       value: 6,
       // dollarValue: 0,
-      color:"#F7464A",
-      highlight: "#FF5A5E",
+      color:"#bfb7e6",
+      highlight: "#7d86c1",
       label: "Public Safety"
     },
     {
       value: 26,
       // dollarValue: 0,
-      color: "#46BFBD",
-      highlight: "#5AD3D1",
+      color: "#403874",
+      highlight: "#261c4e",
       label: "Neighborhood and Infrastructure"
     },
     {
       value: 3,
       // dollarValue: 0,
-      color: "#FDB45C",
-      highlight: "#FFC870",
+      color: "#1f0937",
+      highlight: "#574331",
       label: "General Government"
     },
     {
       value: 10,
       // dollarValue: 0,
-      color: "#949FB1",
-      highlight: "#A8B3C5",
+      color: "#9d9121",
+      highlight: "#a49959",
       label: "Recreation and Culture"
     },
     {
       value: 43,
       // dollarValue: 0,
-      color: "#4D5360",
-      highlight: "#616774",
+      color: "#b6b37e",
+      highlight: "#91a3f5",
       label: "Transportation"
     },
     {
@@ -111,8 +111,8 @@ var operatingData = [
     {
       value: 0,
       // dollarValue: 0,
-      color: "#d7d7d7",
-      highlight: "#616774",
+      color: "#FDB45C",
+      highlight: "#FFC870",
       label: "Policy and Administration"
     }
 
@@ -122,36 +122,36 @@ var operatingData = [
     {
       value: 23,
       // dollarValue: 0,
-      color:"#F7464A",
-      highlight: "#FF5A5E",
+      color:"#bfb7e6",
+      highlight: "#7d86c1",
       label: "Public Safety"
     },
     {
       value: 23,
       // dollarValue: 0,
-      color: "#46BFBD",
-      highlight: "#5AD3D1",
+      color: "#403874",
+      highlight: "#261c4e",
       label: "Neighborhood and Infrastructure"
     },
     {
       value: 6,
       // dollarValue: 0,
-      color: "#FDB45C",
-      highlight: "#FFC870",
+      color: "#1f0937",
+      highlight: "#574331",
       label: "General Government"
     },
     {
       value: 6,
       // dollarValue: 0,
-      color: "#949FB1",
-      highlight: "#A8B3C5",
+      color: "#9d9121",
+      highlight: "#a49959",
       label: "Recreation and Culture"
     },
     {
       value: 29,
       // dollarValue: 0,
-      color: "#4D5360",
-      highlight: "#616774",
+      color: "#b6b37e",
+      highlight: "#91a3f5",
       label: "Transportation"
     },
     {
@@ -171,8 +171,8 @@ var operatingData = [
     {
       value: 1,
       // dollarValue: 0,
-      color: "#d7d7d7",
-      highlight: "#616774",
+      color: "#FDB45C",
+      highlight: "#FFC870",
       label: "Policy and Administration"
     }
   ];
