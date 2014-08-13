@@ -16,7 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
-
+    <link href='http://getbootstrap.com/examples/sticky-footer/sticky-footer.css'>
 
     <!-- accordion stylesheet -->
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
@@ -30,6 +30,9 @@
               margin-top:50px;
           }
       }
+
+      .footer-link {color:#609191;}
+      .footer-link:hover {color:#609191;}
     </style>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -82,7 +85,7 @@
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Your Dollar At Work</h1>
+          <h1 class="page-header">Your Dollars At Work</h1>
 
           <!-- accordion here -->
           <!-- don't forget accordion stylesheet
@@ -193,9 +196,12 @@
               <li>Office of the Mayor, Board of County Commissioners, and the County Attorney’s Office </li>
             </ul>
           </div>
+        </div>
 
-
-
+        <div class='footer'>
+          <div class='container'>
+            <p class='text-muted' id='footer-text'>Created by <a class='footer-link' href='http://dannysepler.github.io' target='_blank'>Danny Sepler</a> and <a class='footer-link' href='http://rebekahmonson.com' target='_blank'>Rebekah Monson</a> | a <a class='footer-link' href='http://projects.codeformiami.org/projects/budget_visualization' target='_blank'>Code for Miami</a> project</p>
+          </div>
         </div>
 
         </div>
