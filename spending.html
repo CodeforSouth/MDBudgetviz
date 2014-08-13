@@ -29,24 +29,6 @@
               margin-top:50px;
           }
 
-
-          /*#operating_chartdiv div div{
-              display: inline-block !important;
-              position: relative!important;
-              width: 50%!important;
-              padding-bottom: 50%!important; *//* depends on svg ratio, for my zebra height/width = 1.2 so padding-bottom = 50% * 1.2 = 60% *//*
-
-              vertical-align: middle!important; *//* top | middle | bottom ... do what you want *//*
-          }
-
-
-          svg{ *//* svg into : object, img or inline *//*
-              display: !important;
-              position: absolute!important;
-              top: 0!important;
-              left: 0!important;
-              width: 100%!important; *//* only required for <img /> *//*
-          }*/
       }
 
 
@@ -76,9 +58,8 @@
       }
 
       .row div .chartdiv {
-        width   : 800px;
-        height    : 500px;
-        font-size : 11px;
+        width   : 100%;
+        height    : 650px;
         margin-left: auto;
         margin-right:auto;
       }      
@@ -191,6 +172,13 @@
         var chart = AmCharts.makeChart("operating_chartdiv", {
           "type": "pie",
           "theme": "light",
+          "marginTop":120,
+          "marginBottom":50,
+          "marginLeft":50,
+          "marginRight":0,
+          "fontSize":17,
+          "responsive": true,
+          "maintainAspectRatio": true,
           "dataProvider": [{
               "title": "Public Safety",
               "value": 1318090600
@@ -228,6 +216,13 @@
         var chart = AmCharts.makeChart("capital_chartdiv", {
           "type": "pie",
           "theme": "light",
+            "marginTop":120,
+            "marginBottom":50,
+            "marginLeft":50,
+            "marginRight":0,
+            "fontSize":17,
+            "responsive": true,
+            "maintainAspectRatio": false,
           "dataProvider": [{
               "title": "Public Safety",
               "value": 98940000
@@ -265,6 +260,13 @@
         var chart = AmCharts.makeChart("total_chartdiv", {
           "type": "pie",
           "theme": "light",
+            "marginTop":120,
+            "marginBottom":50,
+            "marginLeft":50,
+            "marginRight":0,
+            "fontSize":17,
+            "responsive": true,
+            "maintainAspectRatio": true,
           "dataProvider": [{
               "title": "Public Safety",
               "value": 1417030600
