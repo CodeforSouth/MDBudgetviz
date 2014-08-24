@@ -20,7 +20,22 @@
 
     <!-- custom style for doughnuts -->
     <style>
+      #canvas-holder{
+        width:30%;
+      }
+      #canvas-holder2{
+        width:30%;
+        position:relative;
 
+      }
+      #canvas-holder3{
+        width:30%;
+        position:relative;
+      }
+
+      canvas {
+        display: inline-block;
+      }
     </style>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -50,8 +65,8 @@
           </button>
           <a class="navbar-brand" href="#">Miami-Dade Budget Visualizations</a>
         </div>
-        
-        
+
+
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.html">About</a></li>
@@ -67,9 +82,9 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="index.html">Overview</a></li>
-            <li><a href="doughnuts.html">Spending - Doughnuts</a></li>
-            <li class='active'><a href="bars.html">Spending - Bars</a></li>
-            <li><a href="revenue-doughnuts.html">Revenue</a></li>
+            <li ><a href="doughnuts.html">Spending - Doughnuts</a></li>
+            <li><a href="bars.html">Spending - Bars</a></li>
+            <li class="active"><a href="revenue-doughnuts.html">Revenue</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">All</a></li>
@@ -82,58 +97,76 @@
 
           <!-- put 'em here -->
           <div class='row placeholders'>
-            <h3>Operating (in millions of dollars)</h3>
-            <canvas id="operating_canvas" height="450" width="600"></canvas>
-
-            <h3>Capital (in millions of dollars)</h3>
-            <canvas id="capital_canvas" height="450" width="600"></canvas>
-
-            <h3>Total (in millions of dollars) -- these percentages are NOT correct, though the numbers are</h3>         
-            <canvas id="total_canvas" height="450" width="600"></canvas>
-          </div>
-
-          
+            <div id="canvas-holder" class='col-sm-3 col-md-2'>
+              <canvas id="operating-chart" width="500" height="500"></canvas>
+              <h4>Operating Revenue by Source</h4>
+            </div>
+            <br>
+            <p class="spacer"></p>
+          </div> <!--row placeholders -->
 
 
-          <!-- chart -->
-          <h2 class="sub-header">Broken Down</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+          <div class="row">
+
+            <h2 class="sub-header">Broken Down</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Revenue Source</th>
+                    <th>Percent of Total</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                 <tfoot>
+                    <tr>
+                      <td><em>Total</em></td>
+                      <td></td>
+                      <td><em>$4,545,140,000</em> </td>
+                    </tr>
+                  </tfoot>
+                <tbody>
+                  <tr>
+                    <td>Proprietary</td>
+                    <td>46%</td>
+                    <td>$2,078,790,000</td>
+                  </tr>
+                  <tr>
+                    <td>Federal and State Grants</td>
+                    <td>7%</td>
+                    <td>$335,772,000</td>
+                  </tr>
+                  <tr>
+                    <td>Property Tax</td>
+                    <td>30%</td>
+                    <td>$1,363,193,000</td>
+                  </tr>
+                  <tr>
+                    <td>Sales Tax </td>
+                    <td> 8%</td>
+                    <td>$363,330,000</td>
+                  </tr>
+
+                  <tr>
+                    <td>Gas Tax</td>
+                    <td>1%</td>
+                    <td>$61,020,000</td>
+                  </tr>
+                  <tr>
+                    <td>Misc. State Revenues</td>
+                    <td>2%</td>
+                    <td>$88,562,000</td>
+                  </tr>
+                   <tr>
+                    <td>Other Misc.</td>
+                    <td>6%</td>
+                    <td>$254,473,000</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+        </div><!--row -->
       </div>
     </div>
 
@@ -147,29 +180,12 @@
 
 
 
-      <script src='bar-data.js'></script>
+      <script src='revenue-doughnut-data.js'></script>
       <script>
-
         window.onload = function(){
-          
-          // load operating costs graph
-          var op_ctx = document.getElementById("operating_canvas").getContext("2d");
-          window.myBar = new Chart(op_ctx).Bar(operating_data, {
-            responsive : true
-          });
-
-          // load capital costs graph
-          var cap_ctx = document.getElementById("capital_canvas").getContext("2d");
-          window.myBar = new Chart(cap_ctx).Bar(capital_data, {
-            responsive : true
-          });
-
-          // load total costs graph
-          var tot_ctx = document.getElementById("total_canvas").getContext("2d");
-          window.myBar = new Chart(tot_ctx).Bar(total_data, {
-            responsive : true
-          });        
-        }
+          var ctx = document.getElementById("operating-chart").getContext("2d");
+          window.myDoughnut = new Chart(ctx).Doughnut(operatingData, {responsive : true});
+        };
       </script>
 
   </body>

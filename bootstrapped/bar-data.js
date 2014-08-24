@@ -10,6 +10,7 @@ var operating_data = {
     "Policy/Administration (1%)"
   ], datasets : [
     {
+      label: "Operating Data",
       fillColor : "rgba(220,220,220,0.5)",
       strokeColor : "rgba(220,220,220,0.8)",
       highlightFill: "rgba(220,220,220,0.75)",
@@ -59,15 +60,15 @@ var capital_data = {
   ]
 };
 
-
+// 8/23 now matches percentages in doughnut-data.js 
 var total_data = {
   labels : [
-    "Transportation (24%)",
-    "Neighborhood and Infrastructure (22%)",
-    "Public Safety (29%)", 
-    "Human and Health Services (9%)", 
-    "Recreation and Culture (5%)", 
-    "General Government (7%)", 
+    "Transportation (29%)",
+    "Neighborhood and Infrastructure (23%)",
+    "Public Safety (23%)", 
+    "Human and Health Services (10%)", 
+    "Recreation and Culture (6%)", 
+    "General Government (6%)", 
     "Economic Development (3%)",
     "Policy/Administration (1%)"
   ], datasets : [
