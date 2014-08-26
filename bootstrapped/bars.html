@@ -50,8 +50,8 @@
           </button>
           <a class="navbar-brand" href="#">Miami-Dade Budget Visualizations</a>
         </div>
-        
-        
+
+
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.html">About</a></li>
@@ -67,15 +67,17 @@
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li><a href="index.html">Overview</a></li>
-            <li><a href="doughnuts.html">Spending - Doughnuts</a></li>
             <li class='active'><a href="bars.html">Spending - Bars</a></li>
-            <li><a href="revenue-doughnuts.html">Revenue</a></li>
+            <li><a href="spending-operating.html">Spending (Operating)</a></li>
+            <li><a href="spending-capital.html">Spending (Capital)</a></li>
+            <li><a href="spending-total.html">Spending (Total)</a></li>
+            <li><a href="spending-breakdown.html">Spending Breakdown</a></li>
+            <li><a href="revenue-breakdown.html">Revenue Breakdown</a></li>
           </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">All</a></li>
+          <!-- <ul class="nav nav-sidebar">
             <li><a href="">Operating Expenses Only</a></li>
             <li><a href="">Capital Expenses Only</a></li>
-          </ul>
+          </ul> -->
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Visual Aids</h1>
@@ -88,11 +90,11 @@
             <h3>Capital (in millions of dollars)</h3>
             <canvas id="capital_canvas" height="450" width="600"></canvas>
 
-            <h3>Total (in millions of dollars) -- these percentages are NOT correct, though the numbers are</h3>         
+            <h3>Total (in millions of dollars) -- these percentages are NOT correct, though the numbers are</h3>
             <canvas id="total_canvas" height="450" width="600"></canvas>
           </div>
 
-          
+
 
 
           <!-- chart -->
@@ -142,16 +144,15 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-    <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
     <script src="../Chart.js"></script>
 
 
 
-      <script src='bar-data.js'></script>
+      <script src='spending-data-bar.js'></script>
       <script>
 
         window.onload = function(){
-          
+
           // load operating costs graph
           var op_ctx = document.getElementById("operating_canvas").getContext("2d");
           window.myBar = new Chart(op_ctx).Bar(operating_data, {
@@ -168,7 +169,7 @@
           var tot_ctx = document.getElementById("total_canvas").getContext("2d");
           window.myBar = new Chart(tot_ctx).Bar(total_data, {
             responsive : true
-          });        
+          });
         }
       </script>
 
