@@ -65,11 +65,29 @@
           <a class="navbar-brand" href="#">Miami-Dade Budget Visualizations</a>
         </div>
 
-
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
             <li><a href="index.html">About</a></li>
-            <li><a href="http://www.miamidade.gov/budget/">Learn more</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Spending
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="spending-operating.html">Operating</a></li>
+                    <li><a href="spending-capital.html">Capital</a></li>
+                    <li><a href="spending-total.html">Total</a></li>
+                    <li><a href="spending-breakdown.html">Breakdown</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Revenue
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="revenue-breakdown.html">Breakdown</a></li>
+                </ul>
+            </li>
+            <li><a href="descriptions.html">Your Dollars at Work</a></li>
           </ul>
         </div>
 
@@ -78,21 +96,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-              <li><a href="index.html">Overview</a></li>
-              <li><a href="spending-operating.html">Spending (Operating)</a></li>
-              <li><a href="spending-capital.html">Spending (Capital)</a></li>
-              <li><a href="spending-total.html">Spending (Total)</a></li>
-              <li><a href="spending-breakdown.html">Spending Breakdown</a></li>
-              <li><a href="revenue-breakdown.html">Revenue Breakdown</a></li>
-          </ul>
-          <!-- <ul class="nav nav-sidebar">
-              <li><a href="">Operating Expenses Only</a></li>
-              <li><a href="">Capital Expenses Only</a></li>
-          </ul> -->
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="col-sm-12 main">
           <h1 class="page-header">Revenue</h1>
 
           <!-- put 'em here -->
