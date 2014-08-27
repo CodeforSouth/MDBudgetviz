@@ -17,6 +17,29 @@
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 
+    <style>
+      @media screen and (max-width:768px) {
+          body {
+              margin-top:50px;
+          }
+      }
+
+      #signature {
+        font-family: 'Herr Von Muellerhoff', cursive;
+      }
+
+      .main p {
+        font-size: 17px;
+      }
+
+      .line-break {height:30px;}
+
+      #footer-text {font-size:12px;font-family: 'Merriweather', serif;}
+      .footer-link {color:#609191;}
+      .footer-link:hover {color:#609191;}
+
+    </style>
+
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
@@ -74,7 +97,26 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Welcome</h1>
-          <p>It is our job to make this election easier for you.</p>
+
+          <p>Miami's Early Voting for the August 26th Primary Elections starts on August 11th and continues until August 24th.</p>
+
+          <p>On Wednesday, August 13, Miami-Dade Mayor Carlos Gimenez will host two "Social Media Town Hall Meetings." Each will offer a chance for citizens to ask the mayor any question regarding the proposed budget for the 2014-2015 fiscal year. From 12pm - 1pm, Gimenez will be on <a href='https://www.facebook.com/events/761895147208652'>Facebook</a>. From 3pm - 4pm, he will be on <a href='https://twitter.com/MayorGimenez'>Twitter</a>.</p>
+
+          <p>We aim to use visualizations to make the proposal as easy to understand as possible for the greater Miami-Dade population. We take our numbers from the Miami-Dade Budget <a href='http://www.miamidade.gov/budget/'>website</a>. The data used is accurate up to August 11, 2014.</p>
+
+          <p>All citizens deserve to know where their tax dollars go.</p>
+
+          <div class="line-break"></div>
+          <h1 id='signature'>Code for Miami</h1>
+
+          <div class="line-break"></div>
+          <div class="line-break"></div>
+
+          <div class='footer'>
+            <div class='container'>
+              <p class='text-muted' id='footer-text'>Created by <a class='footer-link' href='http://dannysepler.github.io' target='_blank'>Danny Sepler</a> and <a class='footer-link' href='http://rebekahmonson.com' target='_blank'>Rebekah Monson</a> | a <a class='footer-link' href='http://projects.codeformiami.org/projects/budget_visualization' target='_blank'>Code for Miami</a> project</p>
+            </div>
+          </div>
         </div>
 
 
