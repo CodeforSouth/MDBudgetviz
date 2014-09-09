@@ -19,7 +19,22 @@
 
 	<!-- custom style for doughnuts -->
 	<style>
+	#canvas-holder{
+		width:30%;
+	}
+	#canvas-holder2{
+		width:30%;
+		position:relative;
 
+	}
+	#canvas-holder3{
+		width:30%;
+		position:relative;
+	}
+
+	canvas {
+		display: inline-block;
+	}
 	</style>
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -55,8 +70,8 @@
 			<li><a href="index.html">About</a></li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Spending
-					<span class="caret"></span>
-				</a>
+<span class="caret"></span>
+</a>
 				<ul class="dropdown-menu" role="menu">
 					<li><a href="spending-operating.html">Operating</a></li>
 					<li><a href="spending-capital.html">Capital</a></li>
@@ -80,17 +95,134 @@
 	</div>
 
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-12 main">
-				<h1 class="page-header">Spending</h1>
+	<div class="row">
+		<div class="col-sm-12 main">
+		<h1 class="page-header">Spending (Operating)</h1>
 
-				<!-- put 'em here -->
-				<div class='row placeholders'>
-					<h3>Operating (in millions of dollars)</h3>
-					<canvas id="operating_canvas" height="450" width="600"></canvas>
-				</div>
+		<!-- put 'em here -->
+		<div class='row placeholders'>
+			<div id="canvas-holder" class='col-sm-3 col-md-2'>
+				<canvas id="operating-chart" width="500" height="500"></canvas>
+				<h4>Operating expenses</h4>
 			</div>
 		</div>
+
+
+		<h2 class="sub-header">Broken Down</h2>
+		<div class="table-responsive">
+			<table class="table table-striped">
+			<thead>
+				<tr>
+				<th>Category</th>
+				<th>Percent of Operating</th>
+				<th>Operating Amount</th>
+				<th>Percent of Capital</th>
+				<th>Capital Amount</th>
+				<th>Percent of Total Budget</th>
+				<th>Amount from Total Budget</th>
+				<th></th>
+				</tr>
+			</thead>
+
+
+			<tbody>
+				<tr>
+				<td>Public Safety</td>
+				<td>29%</td>
+				<td>$1,316,208,000</td>
+				<td>6%</td>
+				<td>$93,445,000</td>
+				<td>22.88%</td>
+				<td>$1,417,030,600</td>
+				</tr>
+				<tr>
+				<td>Neighborhood & Infrastructure</td>
+				<td>22%</td>
+				<td>$978,340,000</td>
+				<td>26%</td>
+				<td>$426,117,000</td>
+				<td>23.06%</td>
+				<td>$1,428,670,800</td>
+				</tr>
+				<tr>
+				<td>General Government </td>
+				<td>7%</td>
+				<td>$340,676,000</td>
+				<td>3%</td>
+				<td>$52,105,000</td>
+				<td>5.94%</td>
+				<td>$367,629,800</td>
+
+				</tr>
+				<tr>
+				<td>Recreation & Culture</td>
+				<td>5%</td>
+				<td>$218,537,000</td>
+				<td>10%</td>
+				<td>$169,459,000</td>
+				<td>6.33%</td>
+				<td>$392,157,000</td>
+				</tr>
+				<tr>
+				<td>Transportation</td>
+				<td>24%</td>
+				<td>$1,111,773,000</td>
+				<td>43%</td>
+				<td>$708,490,000</td>
+				<td>29.06%</td>
+				<td>$1,799,903,600</td>
+				</tr>
+				<tr>
+				<td>Health &amp; Human</td>
+				<td>9%</td>
+				<td>$413,329,000</td>
+				<td>11%</td>
+				<td>$178,076,000</td>
+				<td>9.53%</td>
+				<td>$590,452,600</td>
+				</tr>
+				<tr>
+				<td>Economic Development</td>
+				<td>3%</td>
+				<td>$125,413,000</td>
+				<td>1%</td>
+				<td>$21,051,000</td>
+				<td>2.47%</td>
+				<td>$152,844,200</td>
+				</tr>
+				<tr>
+				<td>Policy/Admin</td>
+				<td>1%</td>
+				<td>$40,864,000</td>
+				<td>0%</td>
+				<td>$0</td>
+				<td>0.73%</td>
+				<td>$45,451,400</td>
+				</tr>
+				<br>
+				<tr>
+				</tr>
+				<tr>
+				<td><em>Subtotal</em></td>
+				<td></td>
+				<td><em>$4,545,140,000</em></td>
+				<td></td>
+				<td><em>$1,648,742,000</em></td>
+				</tr>
+				<tr>
+				<th>Total</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<th>$6,194,140,000</th>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+		</div>
+	</div>
 	</div>
 
 	<!-- Bootstrap core JavaScript
@@ -104,16 +236,10 @@
 
 	<script src='data/spending-data-doughnut.js'></script>
 	<script>
-
 		window.onload = function(){
-
-			// load operating costs graph
-			var op_ctx = document.getElementById("operating_canvas").getContext("2d");
-			window.myBar = new Chart(op_ctx).Bar(operating_data, {
-				responsive : true
-			});
-
-		}
+		var ctx = document.getElementById("operating-chart").getContext("2d");
+		window.myDoughnut = new Chart(ctx).Doughnut(operatingData, {responsive : true});
+		};
 	</script>
 
 </body>
