@@ -1,0 +1,10 @@
+#canvas-holder,
+#canvas-holder2,
+#canvas-holder3 {
+	position: relative;
+	margin: 0 auto;
+	width: 30%;
+}
+canvas {
+	display: inline-block;
+}

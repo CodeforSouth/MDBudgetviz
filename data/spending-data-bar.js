@@ -10,9 +10,10 @@ var operating_data = {
     "Policy/Administration (1%)"
   ], datasets : [
     {
-      fillColor : "#bfb7e6",
+      label: "Operating Data",
+      fillColor : "rgba(220,220,220,0.5)",
       strokeColor : "rgba(220,220,220,0.8)",
-      highlightFill: "#7d86c1",
+      highlightFill: "rgba(220,220,220,0.75)",
       highlightStroke: "rgba(220,220,220,1)",
       data : 
       [
@@ -41,9 +42,9 @@ var capital_data = {
     "Policy/Admin (0%)"
   ], datasets : [
     {
-      fillColor : "#1f0937",
+      fillColor : "rgba(220,220,220,0.5)",
       strokeColor : "rgba(220,220,220,0.8)",
-      highlightFill: "#574331",
+      highlightFill: "rgba(220,220,220,0.75)",
       highlightStroke: "rgba(220,220,220,1)",
       data : [
         708.49,   // transportation
@@ -59,22 +60,22 @@ var capital_data = {
   ]
 };
 
-
+// 8/23 now matches percentages in doughnut-data.js 
 var total_data = {
   labels : [
-    "Transportation (24%)",
-    "Neighborhood and Infrastructure (22%)",
-    "Public Safety (29%)", 
-    "Human and Health Services (9%)", 
-    "Recreation and Culture (5%)", 
-    "General Government (7%)", 
+    "Transportation (29%)",
+    "Neighborhood and Infrastructure (23%)",
+    "Public Safety (23%)", 
+    "Human and Health Services (10%)", 
+    "Recreation and Culture (6%)", 
+    "General Government (6%)", 
     "Economic Development (3%)",
     "Policy/Administration (1%)"
   ], datasets : [
     {
-      fillColor : "#9d9121",
+      fillColor : "rgba(220,220,220,0.5)",
       strokeColor : "rgba(220,220,220,0.8)",
-      highlightFill: "#a49959",
+      highlightFill: "rgba(220,220,220,0.75)",
       highlightStroke: "rgba(220,220,220,1)",
       data : 
       [

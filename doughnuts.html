@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../favicon.ico">
+    <link rel="icon" href="../../favicon.ico">
 
     <title>Miami-Dade Budget Visualization</title>
 
@@ -17,30 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/dashboard/dashboard.css" rel="stylesheet">
 
-
-    <!-- custom style for doughnuts -->
-    <style>
-      #canvas-holder{
-        width:30%;
-      }
-      #canvas-holder2{
-        width:30%;
-        position:relative;
-
-      }
-      #canvas-holder3{
-        width:30%;
-        position:relative;
-      }
-
-      canvas {
-        display: inline-block;
-      }
-
-      .row div {
-        margin-bottom: 70px;
-      }
-    </style>
+    <link href="style.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -69,12 +46,30 @@
           </button>
           <a class="navbar-brand" href="#">Miami-Dade Budget Visualizations</a>
         </div>
-        
-        
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
             <li><a href="index.html">About</a></li>
-            <li><a href="http://www.miamidade.gov/budget/">Learn more</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Spending
+  <span class="caret"></span>
+</a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="spending-operating.html">Operating</a></li>
+                    <li><a href="spending-capital.html">Capital</a></li>
+                    <li><a href="spending-total.html">Total</a></li>
+                    <!-- <li><a href="spending-breakdown.html">Breakdown</a></li> -->
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Revenue
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="revenue-breakdown.html">Breakdown</a></li>
+                </ul>
+            </li>
+            <li><a href="your-dollars-at-work.html">Your Dollars at Work</a></li>
           </ul>
         </div>
 
@@ -83,43 +78,28 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li><a href="index.html">Overview</a></li>
-            <li class="active"><a href="doughnuts.html">Spending - Doughnuts</a></li>
-            <li><a href="AMDoughnut.html">Spending - AM Doughnuts</a></li>
-            <li><a href="bars.html">Spending - Bars</a></li>
-            <li><a href="stackedbars.html">Spending - Stacked Bars</a></li>
-            <li><a href="divAccordion.html">Division Accordion</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">All</a></li>
-            <li><a href="">Operating Expenses Only</a></li>
-            <li><a href="">Capital Expenses Only</a></li>
-          </ul>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="col-sm-12 main">
           <h1 class="page-header">Visual Aids</h1>
 
           <!-- put 'em here -->
           <div class='row placeholders'>
-            <div id="canvas-holder" class='col-sm-offset-3 col-md-offset-2'>
-              <h4>Operating expenses</h4>
+            <div id="canvas-holder">
               <canvas id="operating-chart" width="500" height="500"></canvas>
+              <h4>Operating expenses</h4>
             </div>
 
-            <div id="canvas-holder2" class='col-sm-offset-3 col-md-offset-2'>
-              <h4>Capital expenses</h4>
+            <div id="canvas-holder2">
               <canvas id="capital-chart" width="500" height="500"></canvas>
+              <h4>Capital expenses</h4>
             </div>
 
-            <div id="canvas-holder3" class='col-sm-offset-3 col-md-offset-2'>
-              <h4>Capital expenses</h4>
+            <div id="canvas-holder3">
               <canvas id="total-chart" width="500" height="500"></canvas>
+              <h4>Total (Operating and Capital)</h4>
             </div>
           </div>
 
-          
+
 
 
 
@@ -128,34 +108,110 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
+                  <th>Category</th>
+                  <th>Percent of Operating</th>
+                  <th>Operating Amount</th>
+                  <th>Percent of Capital</th>
+                  <th>Capital Amount</th>
+                  <th>Percent of Total Budget</th>
+                  <th>Amount from Total Budget</th>
+                  <th></th>
                 </tr>
               </thead>
+
+
               <tbody>
                 <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
+                 <td>Public Safety</td>
+                  <td>29%</td>
+                  <td>$1,316,208,000</td>
+                  <td>6%</td>
+                  <td>$93,445,000</td>
+                  <td>22.88%</td>
+                  <td>$1,417,030,600</td>
                 </tr>
                 <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
+                  <td>Neighborhood & Infrastructure</td>
+                  <td>22%</td>
+                  <td>$978,340,000</td>
+                  <td>26%</td>
+                  <td>$426,117,000</td>
+                  <td>23.06%</td>
+                  <td>$1,428,670,800</td>
                 </tr>
                 <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
+                 <td>General Government </td>
+                  <td>7%</td>
+                  <td>$340,676,000</td>
+                  <td>3%</td>
+                  <td>$52,105,000</td>
+                  <td>5.94%</td>
+                  <td>$367,629,800</td>
+
+                </tr>
+                 <tr>
+                 <td>Recreation & Culture</td>
+                  <td>5%</td>
+                  <td>$218,537,000</td>
+                  <td>10%</td>
+                  <td>$169,459,000</td>
+                  <td>6.33%</td>
+                  <td>$392,157,000</td>
+                </tr>
+                 <tr>
+                <td>Transportation</td>
+                  <td>24%</td>
+                  <td>$1,111,773,000</td>
+                  <td>43%</td>
+                  <td>$708,490,000</td>
+                  <td>29.06%</td>
+                  <td>$1,799,903,600</td>
+                </tr>
+                 <tr>
+                <td>Health &amp; Human</td>
+                  <td>9%</td>
+                  <td>$413,329,000</td>
+                  <td>11%</td>
+                  <td>$178,076,000</td>
+                  <td>9.53%</td>
+                  <td>$590,452,600</td>
+                </tr>
+                 <tr>
+                <td>Economic Development</td>
+                  <td>3%</td>
+                  <td>$125,413,000</td>
+                  <td>1%</td>
+                  <td>$21,051,000</td>
+                  <td>2.47%</td>
+                  <td>$152,844,200</td>
+                </tr>
+                 <tr>
+                  <td>Policy/Admin</td>
+                  <td>1%</td>
+                  <td>$40,864,000</td>
+                  <td>0%</td>
+                  <td>$0</td>
+                  <td>0.73%</td>
+                  <td>$45,451,400</td>
+                </tr>
+                <br>
+                <tr>
+                </tr>
+                 <tr>
+                  <td><em>Subtotal</em></td>
+                  <td></td>
+                  <td><em>$4,545,140,000</em></td>
+                  <td></td>
+                  <td><em>$1,648,742,000</em></td>
+                </tr>
+                  <tr>
+                  <th>Total</th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <th>$6,194,140,000</th>
                 </tr>
               </tbody>
             </table>
@@ -169,12 +225,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-    <script src="http://getbootstrap.com/assets/js/docs.min.js"></script>
-    <script src="Chart.js"></script>
+    <script src="Chart.min.js"></script>
 
 
 
-      <script src='data/doughnut-data.js'></script>
+      <script src='data/spending-data-doughnut.js'></script>
       <script>
         window.onload = function(){
           var ctx = document.getElementById("operating-chart").getContext("2d");
